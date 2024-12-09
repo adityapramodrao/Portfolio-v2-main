@@ -10,10 +10,7 @@ import instagramIcon from '../../assets/instagram.svg'
 export function Footer() {
   return (
     <Container className="footer">
-      <a href="#" className="logo">
-        <span>www.Aditya</span>
-        <span>rao.in</span>
-      </a>
+     
       <div>
         <p>
           This Website was made with <img src={reactIcon} alt="React" />

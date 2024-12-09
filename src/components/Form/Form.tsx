@@ -1,14 +1,14 @@
 import { Container, ContainerSucces } from './styles'
 import { useForm, ValidationError } from '@formspree/react'
 import { toast, ToastContainer } from 'react-toastify'
-import ReCAPTCHA from 'react-google-recaptcha'
 import { useEffect, useState } from 'react'
 import validator from 'validator'
 
 export function Form() {
-  const [state, handleSubmit] = useForm('xknkpqry')
+  const [state, handleSubmit] = useForm('xwpkjlgq')  // Formspree form ID here
   const [validEmail, setValidEmail] = useState(false)
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('') 
+
   function verifyEmail(email: string) {
     if (validator.isEmail(email)) {
       setValidEmail(true)
@@ -16,6 +16,7 @@ export function Form() {
       setValidEmail(false)
     }
   }
+
   useEffect(() => {
     if (state.succeeded) {
       toast.success('Email successfully sent!', {
@@ -25,8 +26,17 @@ export function Form() {
         hideProgressBar: false,
         toastId: 'succeeded',
       })
+    } else if (state.errors.length > 0) {
+      toast.error('There was an issue with the submission, please try again.', {
+        position: toast.POSITION.BOTTOM_LEFT,
+        pauseOnFocusLoss: false,
+        closeOnClick: true,
+        hideProgressBar: false,
+        toastId: 'error',
+      })
     }
-  })
+  }, [state])
+
   if (state.succeeded) {
     return (
       <ContainerSucces>
@@ -42,6 +52,7 @@ export function Form() {
       </ContainerSucces>
     )
   }
+
   return (
     <Container>
       <h2>Get in touch using the form</h2>
