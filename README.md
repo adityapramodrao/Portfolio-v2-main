@@ -1,7 +1,7 @@
 # Portfolio of Aditya Rao
 
-<img src ="https://github.com/CodeVinayak/CodeVinayak/blob/5920a79f4c5977332a67caf91125241cf0fc46b5/www.vinayaksingh.in.png" />
- 
+![image](https://github.com/user-attachments/assets/1887aeeb-a0fe-4e32-aa05-4de4092eb232)
+
 This project was created with CRA (Create React App)
 
 This is my portfolio website to introduce myself, here I put my skills, projects, and contact details.
